@@ -9,12 +9,16 @@ namespace variant9123 {
     }
 
     void complex_numbers::OutSpecific(std::ofstream &ofstr) {
-        ofstr << "[COMPLEX NUMBER = ";
+        ofstr << "[COMPLEX NUMBER = (" << ToDouble() << ") ";
         // Вывод комплексного числа в виде xi + y
         ofstr << imaginary << "i"; // xi
         // Вывод действительного числа со знаком "+"
         if (real >= 0) ofstr << "+" << real << "]" << std::endl;
         else ofstr << real << "]" << std::endl; // Со знаком "-"
+    }
+
+    double complex_numbers::ToDouble() {
+        return sqrt(real*real + imaginary*imaginary);
     }
 
 }

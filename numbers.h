@@ -27,6 +27,7 @@ namespace variant9123 {
         virtual void InSpecific(std::ifstream &ifstr) = 0;
         // Функция выводит свойства числа
         virtual void OutSpecific(std::ofstream &ofstr) = 0;
+        virtual double ToDouble() = 0;
     private:
         types num_type; // Тип объекта
     };

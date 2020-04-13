@@ -12,6 +12,7 @@ namespace variant9123 {
         // Считывание и вывод дробных чисел
         void OutSpecific(std::ofstream &ofstr);
         void InSpecific(std::ifstream &ifstr);
+        double ToDouble();
     private:
         types num_type; // Тип объекта
         // Простые дроби (числитель, знаменатель – пара целых чисел)

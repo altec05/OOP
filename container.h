@@ -25,6 +25,7 @@ namespace variant9123 {
         void In(std::ifstream &ifstr);
         void Out(std::ofstream &ofstr);
         numbers *arr[max_len];
+        void Sort();
     };
 
 }

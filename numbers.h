@@ -28,6 +28,7 @@ namespace variant9123 {
         // Функция выводит свойства числа
         virtual void OutSpecific(std::ofstream &ofstr) = 0;
         virtual double ToDouble() = 0;
+        static bool Compare(numbers *num1, numbers *num2);
     private:
         types num_type; // Тип объекта
     };

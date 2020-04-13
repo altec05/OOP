@@ -30,4 +30,8 @@ namespace variant9123 {
     types numbers::get_type() {
         return num_type;
     }
+
+    bool numbers::Compare(numbers *num1, numbers *num2) {
+        return num1->ToDouble() > num2->ToDouble();
+    }
 }

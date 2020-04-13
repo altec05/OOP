@@ -60,4 +60,16 @@ namespace variant9123 {
     int numbers_array::get_len() {
         return len;
     }
+
+    void numbers_array::Sort() {
+        for(int i = 0; i < len-1; i++) {
+            for(int j = i+1; j < len; j++) {
+                if (numbers::Compare(arr[i], arr[j])) {
+                    numbers* temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+    }
 }

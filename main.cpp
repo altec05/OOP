@@ -20,6 +20,8 @@ int main(int argc, char* argv[]) {
     c.In(ifst);
     // Вывод в файл
     c.Out(ofst);
+    ofst << "-------ignoring--complex-------" << std::endl;
+    c.Out(ofst, variant9123::types::COMPLEX);
     // Очистка контейнера
     c.Clear();
     cout << "Program ended"<< endl;

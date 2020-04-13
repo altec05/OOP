@@ -27,13 +27,14 @@ namespace variant9123 {
         }
     }
 
-    void numbers_array::Out(std::ofstream &ofstr) {
+    void numbers_array::Out(std::ofstream &ofstr, types ignore) {
         if(len == 0) {
             ofstr << "Container is empty. " << std::endl;
             return;
         }
         for(int i = 0; i < len; i++) {
             // Выводим элементы
+            if(arr[i]->get_type() == ignore) continue;
             arr[i]->OutSpecific(ofstr);
         }
         std::cout << "Writing is finished." << std::endl;

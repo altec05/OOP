@@ -8,12 +8,13 @@ namespace variant9123 {
         ofstr << "[FRACTIONAL NUMBER = ";
         // Вывод комплексного числа в виде x/y
         ofstr << numerator << "/"; // Вывод числителя
-        if(denominator >= 0) ofstr << denominator << "]" << std::endl; // Вывод положительного знаменателя
-        else ofstr << "(" << denominator << ")]" << std::endl; // Вывод знаменателя в скобках
+        if(denominator >= 0) ofstr << denominator << " " << measure << "]" << std::endl; // Вывод положительного знаменателя
+        else ofstr << "(" << denominator << ") " << measure << "]" << std::endl; // Вывод знаменателя в скобках
     }
 
     void fractional_numbers::InSpecific(std::ifstream &ifstr) {
         ifstr >> numerator >> denominator; // Считываем числитель и знаменатель
+        ifstr >> measure;
         if(!ifstr.eof()) ifstr.get(); // Переход на новую строку
     }
 

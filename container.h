@@ -23,7 +23,7 @@ namespace variant9123 {
         int get_len();
         // Считывание и вывод всех чисел в контейнер
         void In(std::ifstream &ifstr);
-        void Out(std::ofstream &ofstr);
+        void Out(std::ofstream &ofstr, types ignore = types::NONE);
         numbers *arr[max_len];
         void Sort();
     };

@@ -1,5 +1,6 @@
 
 #include "container.h"
+#include "polar_numbers.h"
 
 namespace variant9123 {
 
@@ -50,6 +51,8 @@ namespace variant9123 {
                 case types::FRACTION:
                     delete (fractional_numbers*)arr[i];
                     break;
+                case types::POLAR:
+                    delete (polar_numbers*)arr[i];
             }
         }
     }

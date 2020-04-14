@@ -12,7 +12,8 @@ namespace variant9123 {
     enum types {
         NONE = 0,
         COMPLEX = 1, //Комплексные числа
-        FRACTION = 2 // Простые дроби
+        FRACTION = 2, // Простые дроби
+        POLAR = 3 // Полярные координаты
     };
 
     class numbers {

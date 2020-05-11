@@ -9,6 +9,7 @@ namespace variant9123 {
         numbers *element = nullptr; // Объявление экземпляра структуры
         char data[255]; // Буфер для считывания
         ifstr.getline(data, 255); // Считываем строку
+
         if (std::string(data) == "1") { // Если вводим комплексное число
             element = new complex_numbers;
             element->set_type(types::COMPLEX);
@@ -23,6 +24,7 @@ namespace variant9123 {
             std::cout << "Error has occurred while reading the file" << std::endl;
             return nullptr;
         }
+
         element->InSpecific(ifstr); // Считываем комплексное число и сохраняем указатель
         return element;
     }

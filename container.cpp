@@ -55,6 +55,7 @@ namespace variant9123 {
                     delete (polar_numbers*)arr[i];
             }
         }
+        len = 0;
     }
     // Увеличить длину массива
     void numbers_array::increment_len() {

@@ -13,7 +13,15 @@ namespace variant9123 {
     }
 
     void fractional_numbers::InSpecific(std::ifstream &ifstr) {
-        ifstr >> numerator >> denominator; // Считываем числитель и знаменатель
+        if(!ifstr.eof()) return;
+        ifstr >> numerator;
+        if(!ifstr.eof()) return;
+        ifstr >> denominator; // Считываем числитель и знаменатель
+        if(denominator == 0) {
+            std::cout << "Error: division by zero!" << std::endl;
+            return;
+        }
+        if(!ifstr.eof()) return;
         ifstr >> measure;
         if(!ifstr.eof()) ifstr.get(); // Переход на новую строку
     }

@@ -4,7 +4,11 @@
 namespace variant9123 {
     // Считывание и вывод комплексных чисел
     void complex_numbers::InSpecific(std::ifstream &ifstr) {
-        ifstr >> real >> imaginary; // Считываем мнимую и действительную часть
+        if(!ifstr.eof()) return;
+        ifstr >> real;
+        if(!ifstr.eof()) return;
+        ifstr >> imaginary; // Считываем мнимую и действительную часть
+        if(!ifstr.eof()) return;
         ifstr >> measure;
         if (!ifstr.eof()) ifstr.get(); // Переход на новую строку
     }

@@ -11,7 +11,11 @@ namespace variant9123 {
     }
 
     void polar_numbers::InSpecific(std::ifstream &ifstr) {
-        ifstr >> angle >> radius; // Считываем числитель и знаменатель
+        if(!ifstr.eof()) return;
+        ifstr >> angle;
+        if(!ifstr.eof()) return;
+        ifstr >> radius; // Считываем числитель и знаменатель
+        if(!ifstr.eof()) return;
         ifstr >> measure;
         if(!ifstr.eof()) ifstr.get(); // Переход на новую строку
     }

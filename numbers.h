@@ -19,8 +19,8 @@ namespace variant9123 {
     class numbers {
     public:
         // Функции получения и установки num_type
-        void set_type(int num);
-        types get_type();
+        void SetType(int type_id);
+        types GetType();
         // Статическую функцию можно вызывать без создания объекта
         // Считывание числа из файла
         static numbers *In(std::ifstream &ifstr);

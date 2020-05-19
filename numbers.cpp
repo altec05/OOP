@@ -12,13 +12,13 @@ namespace variant9123 {
 
         if (std::string(data) == "1") { // Если вводим комплексное число
             element = new complex_numbers;
-            element->set_type(types::COMPLEX);
+            element->SetType(types::COMPLEX);
         } else if (std::string(data) == "2") { // Если вводим дробь
             element = new fractional_numbers;
-            element->set_type(types::FRACTION);
+            element->SetType(types::FRACTION);
         } else if (std::string(data) == "3") { // Если вводим полярные координаты
             element = new polar_numbers;
-            element->set_type(types::POLAR);
+            element->SetType(types::POLAR);
         } else { // Если тип не найден
             delete element;
             std::cout << "Error has occurred while reading the file" << std::endl;
@@ -29,11 +29,11 @@ namespace variant9123 {
         return element;
     }
 
-    void numbers::set_type(int num) {
-        num_type = (types)num;
+    void numbers::SetType(int type_id) {
+        num_type = (types)type_id;
     }
 
-    types numbers::get_type() {
+    types numbers::GetType() {
         return num_type;
     }
 

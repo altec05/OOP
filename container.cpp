@@ -5,7 +5,7 @@
 namespace variant9123 {
 
     // Проверка на переполнение
-    bool numbers_array::Overflow_test() {
+    bool numbers_array::OverflowTest() {
         bool res = len >= max_len;
         if(res) { // При переполнении
             std::cout << "Container is full. Stopping reading." << std::endl;
@@ -16,7 +16,7 @@ namespace variant9123 {
     // Считывание и вывод всех чисел в контейнер
     void numbers_array::In(std::ifstream &ifstr) {
         while (!ifstr.eof()) {
-            if(!Overflow_test()) {
+            if(!OverflowTest()) {
                 numbers *num = numbers::In(ifstr);
                 if (!num) { // При ошибке
                     Clear(); // Очистка контейнера
@@ -35,7 +35,7 @@ namespace variant9123 {
         }
         for(int i = 0; i < len; i++) {
             // Выводим элементы
-            if(arr[i]->get_type() == ignore) continue;
+            if(arr[i]->GetType() == ignore) continue;
             arr[i]->OutSpecific(ofstr);
         }
         std::cout << "Writing is finished." << std::endl;
@@ -44,7 +44,7 @@ namespace variant9123 {
     // Очистка контейнера "c"
     void numbers_array::Clear() {
         for(int i = 0; i < len; i++) {
-            switch(arr[i]->get_type()) {
+            switch(arr[i]->GetType()) {
                 case types::COMPLEX:
                     delete (complex_numbers*)arr[i];
                     break;
@@ -58,11 +58,11 @@ namespace variant9123 {
         len = 0;
     }
     // Увеличить длину массива
-    void numbers_array::increment_len() {
+    void numbers_array::IncrementLen() {
         len++;
     }
     // Получить значение длины
-    int numbers_array::get_len() {
+    int numbers_array::GetLen() {
         return len;
     }
 

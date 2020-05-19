@@ -16,11 +16,11 @@ namespace variant9123 {
         // Очистка контейнера "c"
         void Clear();
         // Проверка на переполнение
-        bool Overflow_test();
+        bool OverflowTest();
         // Увеличить длину массива
-        void increment_len();
+        void IncrementLen();
         // Получить значение длины
-        int get_len();
+        int GetLen();
         // Считывание и вывод всех чисел в контейнер
         void In(std::ifstream &ifstr);
         void Out(std::ofstream &ofstr, types ignore = types::NONE);

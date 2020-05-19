@@ -12,7 +12,7 @@ TEST(TESTS, Testing_Input) {
     ifstream ifst(input_str);
     variant9123::numbers_array c{};
     c.In(ifst);
-    EXPECT_FALSE(c.get_len() == 0);
+    EXPECT_FALSE(c.GetLen() == 0);
 }
 
 TEST(TESTS, Testing_Output) {
@@ -26,7 +26,7 @@ TEST(TESTS, Testing_Clear) {
     variant9123::numbers_array c{};
     c.In(ifst);
     c.Clear();
-    EXPECT_EQ(c.get_len(), 0);
+    EXPECT_EQ(c.GetLen(), 0);
 }
 
 TEST(TESTS, Testing_ignore) {
@@ -43,6 +43,6 @@ TEST(TESTS, Testing_overflow) {
     ifstream ifst(input_str);
     variant9123::numbers_array c{};
     c.In(ifst);
-    EXPECT_EQ(c.Overflow_test(), 0);
+    EXPECT_EQ(c.OverflowTest(), 0);
     c.Clear();
 }

@@ -3,14 +3,19 @@
 
 namespace variant9123 {
     // Считывание и вывод комплексных чисел
-    void complex_numbers::InSpecific(std::ifstream &ifstr) {
-        if(!ifstr.eof()) return;
+    bool complex_numbers::InSpecific(std::ifstream &ifstr) {
+        bool bad_flag = false;
+        if(ifstr.eof()) return false;
         ifstr >> real;
-        if(!ifstr.eof()) return;
+        if(ifstr.fail()) bad_flag = true;
+        if(ifstr.eof() || bad_flag) return false;
         ifstr >> imaginary; // Считываем мнимую и действительную часть
-        if(!ifstr.eof()) return;
+        if(ifstr.fail()) bad_flag = true;
+        if(ifstr.eof() || bad_flag) return false;
         ifstr >> measure;
+        if(ifstr.fail()) bad_flag = true;
         if (!ifstr.eof()) ifstr.get(); // Переход на новую строку
+        return !bad_flag;
     }
 
     void complex_numbers::OutSpecific(std::ofstream &ofstr) {

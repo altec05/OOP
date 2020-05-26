@@ -25,7 +25,8 @@ namespace variant9123 {
             return nullptr;
         }
 
-        element->InSpecific(ifstr); // Считываем комплексное число и сохраняем указатель
+        bool ok = element->InSpecific(ifstr); // Считываем комплексное число и сохраняем указатель
+        if(!ok) return nullptr;
         return element;
     }
 

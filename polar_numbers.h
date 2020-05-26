@@ -10,7 +10,7 @@ namespace variant9123 {
     class polar_numbers : public numbers {
     public:
         void OutSpecific(std::ofstream &ofstr);
-        void InSpecific(std::ifstream &ifstr);
+        bool InSpecific(std::ifstream &ifstr);
         double ToDouble();
     private:
         types num_type; // Тип объекта

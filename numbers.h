@@ -26,7 +26,7 @@ namespace variant9123 {
         static numbers *In(std::ifstream &ifstr);
         // Виртуальные функции должны быть переопределены потомками
         // Функция считывает свойства числа
-        virtual void InSpecific(std::ifstream &ifstr) = 0;
+        virtual bool InSpecific(std::ifstream &ifstr) = 0;
         // Функция выводит свойства числа
         virtual void OutSpecific(std::ofstream &ofstr) = 0;
         virtual double ToDouble() = 0;

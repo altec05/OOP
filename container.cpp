@@ -19,6 +19,7 @@ namespace variant9123 {
             if(!OverflowTest()) {
                 numbers *num = numbers::In(ifstr);
                 if (!num) { // При ошибке
+                    std::cout << "Error! Wrong object #" << len <<std::endl;
                     Clear(); // Очистка контейнера
                     return;
                 }

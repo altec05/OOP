@@ -12,18 +12,24 @@ namespace variant9123 {
         else ofstr << "(" << denominator << ") " << measure << "]" << std::endl; // Вывод знаменателя в скобках
     }
 
-    void fractional_numbers::InSpecific(std::ifstream &ifstr) {
-        if(!ifstr.eof()) return;
+    bool fractional_numbers::InSpecific(std::ifstream &ifstr) {
+        bool bad_flag = false;
+        if(ifstr.eof()) return false;
         ifstr >> numerator;
-        if(!ifstr.eof()) return;
+        if(ifstr.fail()) bad_flag = true;
+        if(ifstr.eof() || bad_flag) return false;
         ifstr >> denominator; // Считываем числитель и знаменатель
+        if(ifstr.fail()) bad_flag = true;
         if(denominator == 0) {
             std::cout << "Error: division by zero!" << std::endl;
-            return;
+            return false;
         }
-        if(!ifstr.eof()) return;
+        if(ifstr.eof() || bad_flag) return false;
         ifstr >> measure;
+        if(ifstr.fail()) bad_flag = true;
         if(!ifstr.eof()) ifstr.get(); // Переход на новую строку
+        if(bad_flag) return false;
+        return true;
     }
 
     double fractional_numbers::ToDouble() {

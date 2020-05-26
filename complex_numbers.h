@@ -13,7 +13,7 @@ namespace variant9123 {
         // Считывание и вывод комплексных чисел
         void OutSpecific(std::ofstream &ofstr);
         // Функция считывает свойства числа
-        void InSpecific(std::ifstream &ifstr);
+        bool InSpecific(std::ifstream &ifstr);
         double ToDouble();
     private:
         types num_type; // Тип объекта

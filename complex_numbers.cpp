@@ -17,4 +17,16 @@ namespace variant9123 {
         else ofstr << real << "]" << std::endl; // Со знаком "-"
     }
 
+    void complex_numbers::MultiMethod(numbers *numb, std::ofstream &ofstr) {
+        numb->ComplMethod(ofstr);
+    }
+
+    void complex_numbers::FractMethod(std::ofstream &ofstr) {
+        ofstr << "--complex and fractional--";
+    }
+
+    void complex_numbers::ComplMethod(std::ofstream &ofstr) {
+        ofstr << "--complex and complex--";
+    }
+
 }

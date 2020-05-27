@@ -14,6 +14,9 @@ namespace variant9123 {
         void OutSpecific(std::ofstream &ofstr);
         // Функция считывает свойства числа
         void InSpecific(std::ifstream &ifstr);
+        void MultiMethod(numbers *numb, std::ofstream &ofstr);
+        void FractMethod(std::ofstream &ofstr);
+        void ComplMethod(std::ofstream &ofstr);
     private:
         types num_type; // Тип объекта
         // Комплексные (действительная и мнимая части – пара действительных чисел)

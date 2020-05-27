@@ -60,4 +60,17 @@ namespace variant9123 {
     int numbers_array::get_len() {
         return len;
     }
+
+    void numbers_array::OutPairs(std::ofstream &ofstr) {
+        ofstr << "-----Printing-pairs-with-multimethod-----" << std::endl;
+        for(int i = 0; i < len-1; i++) {
+            for(int j = 0; j < len; j++) {
+                if(i == j) continue;
+                arr[i]->MultiMethod(arr[j], ofstr);
+                ofstr << std::endl;
+                arr[i]->OutSpecific(ofstr);
+                arr[j]->OutSpecific(ofstr);
+            }
+        }
+    }
 }

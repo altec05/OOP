@@ -17,4 +17,16 @@ namespace variant9123 {
         if(!ifstr.eof()) ifstr.get(); // Переход на новую строку
     }
 
+    void fractional_numbers::MultiMethod(numbers *numb, std::ofstream &ofstr) {
+        numb->FractMethod(ofstr);
+    }
+
+    void fractional_numbers::FractMethod(std::ofstream &ofstr) {
+        ofstr << "--fractional and fractional--";
+    }
+
+    void fractional_numbers::ComplMethod(std::ofstream &ofstr) {
+        ofstr << "--fractional and complex--";
+    }
+
 }

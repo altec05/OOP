@@ -24,6 +24,7 @@ namespace variant9123 {
         // Считывание и вывод всех чисел в контейнер
         void In(std::ifstream &ifstr);
         void Out(std::ofstream &ofstr, types ignore = types::NONE);
+        void OutPairs(std::ofstream &ofstr);
         numbers *arr[max_len];
         void Sort();
     };

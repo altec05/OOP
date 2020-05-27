@@ -29,4 +29,20 @@ namespace variant9123 {
     double polar_numbers::ToDouble() {
         return radius*sin(angle);
     }
+
+    void polar_numbers::MultiMethod(numbers *numb, std::ofstream &ofstr) {
+        numb->PolarMethod(ofstr);
+    }
+
+    void polar_numbers::FractMethod(std::ofstream &ofstr) {
+        ofstr << "--polar and fractional--";
+    }
+
+    void polar_numbers::PolarMethod(std::ofstream &ofstr) {
+        ofstr << "--polar and polar--";
+    }
+
+    void polar_numbers::ComplMethod(std::ofstream &ofstr) {
+        ofstr << "--polar and complex--";
+    }
 }

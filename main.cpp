@@ -33,11 +33,8 @@ int main(int argc, char* argv[]) {
         c.In(ifst);
         // Вывод в файл
         c.Out(ofst);
-        ofst << "-----------Sorted----------" << std::endl;
-        c.Sort();
-        c.Out(ofst);
-        ofst << "-------ignoring--complex-------" << std::endl;
-        c.Out(ofst, variant9123::types::COMPLEX);
+        // Вывод мультиметода
+        c.OutPairs(ofst);
         // Очистка контейнера
         c.Clear();
         cout << "Program ended" << endl;

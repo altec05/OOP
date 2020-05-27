@@ -31,6 +31,10 @@ namespace variant9123 {
         virtual void OutSpecific(std::ofstream &ofstr) = 0;
         virtual double ToDouble() = 0;
         static bool Compare(numbers *num1, numbers *num2);
+        virtual void MultiMethod(numbers *numb, std::ofstream &ofstr) = 0;
+        virtual void FractMethod(std::ofstream &ofstr) = 0;
+        virtual void PolarMethod(std::ofstream &ofstr) = 0;
+        virtual void ComplMethod(std::ofstream &ofstr) = 0;
     private:
         types num_type; // Тип объекта
     };

@@ -36,4 +36,19 @@ namespace variant9123 {
         return (double)(numerator)/(denominator);
     }
 
+    void fractional_numbers::MultiMethod(numbers *numb, std::ofstream &ofstr) {
+        numb->FractMethod(ofstr);
+    }
+
+    void fractional_numbers::FractMethod(std::ofstream &ofstr) {
+        ofstr << "--fractional and fractional--";
+    }
+
+    void fractional_numbers::PolarMethod(std::ofstream &ofstr) {
+        ofstr << "--fractional and polar--";
+    }
+
+    void fractional_numbers::ComplMethod(std::ofstream &ofstr) {
+        ofstr << "--fractional and complex--";
+    }
 }

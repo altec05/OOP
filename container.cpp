@@ -6,7 +6,7 @@ namespace variant9123 {
 
     // Проверка на переполнение
     bool numbers_array::OverflowTest() {
-        bool res = len >= max_len;
+        bool res = GetLen() >= max_len;
         if(res) { // При переполнении
             std::cout << "Container is full. Stopping reading." << std::endl;
         }
@@ -24,7 +24,7 @@ namespace variant9123 {
                     return;
                 }
                 arr[len] = num;
-                len++;
+                IncrementLen();
             } else return;
         }
     }
@@ -34,7 +34,7 @@ namespace variant9123 {
             ofstr << "Container is empty. " << std::endl;
             return;
         }
-        for(int i = 0; i < len; i++) {
+        for(int i = 0; i < GetLen(); i++) {
             // Выводим элементы
             if(arr[i]->GetType() == ignore) continue;
             arr[i]->OutSpecific(ofstr);
@@ -44,7 +44,7 @@ namespace variant9123 {
 
     // Очистка контейнера "c"
     void numbers_array::Clear() {
-        for(int i = 0; i < len; i++) {
+        for(int i = 0; i < GetLen(); i++) {
             switch(arr[i]->GetType()) {
                 case types::COMPLEX:
                     delete (complex_numbers*)arr[i];
@@ -68,8 +68,8 @@ namespace variant9123 {
     }
 
     void numbers_array::Sort() {
-        for(int i = 0; i < len-1; i++) {
-            for(int j = i+1; j < len; j++) {
+        for(int i = 0; i < GetLen()-1; i++) {
+            for(int j = i+1; j < GetLen(); j++) {
                 if (numbers::Compare(arr[i], arr[j])) {
                     numbers* temp = arr[i];
                     arr[i] = arr[j];
@@ -81,8 +81,8 @@ namespace variant9123 {
 
     void numbers_array::OutPairs(std::ofstream &ofstr) {
         ofstr << "-----Printing-pairs-with-multimethod-----" << std::endl;
-        for(int i = 0; i < len-1; i++) {
-            for(int j = 0; j < len; j++) {
+        for(int i = 0; i < GetLen()-1; i++) {
+            for(int j = 0; j < GetLen(); j++) {
                 if(i == j) continue;
                 arr[i]->MultiMethod(arr[j], ofstr);
                 ofstr << std::endl;
